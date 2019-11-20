@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--CSS-->
+    <link rel="stylesheet" href="style.css">
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/4c7b3d1262.js" crossorigin="anonymous"></script>
+    <title>Macro Calculator</title>
+</head>
+<body>
+    <header>
+        <h1>Calculate your daily macros</h1>
+    </header>
+    <main>
+        <div class="first-section">
+            <form action="macroForm" class="macro-form">
+                <div class="daily-intake">
+                    <p>Calories per day <input type="number" name="kcal-daily" class="kcal-daily-box" placeholder="2000"> Kcal</p>
+                </div>
+                <div class="macro-kilo">
+                    <p class="bodyw">bodyweight <input type="number" name="bodyweight">
+                        <input id="kg" type="radio" value="kg" name="kg">
+                        <label for="kg"></label>
+                        <input id="lb" type="radio" value="lb" name="lb">
+                        <label for="lb"></label>
+                    </p>
+                    <p class="pkilo">proteins <i class="far fa-question-circle fa-xs"></i> <input type="number" name="protein-kilo"> g/kg</p>
+                    <p class="fkilo">fats <input type="number" name="fat-kilo"> g/kg</p>
+                </div>
+            </form>
+            <div class="calc-btn">
+                <button id="calculate">Calculate</button>
+            </div>
+        </div>
+        <div class="form-result">
+            <div class="protein-daily result-title">
+                <h2>Proteins</h2>
+                <p class="pgdaily">20 g</p>
+                <p class="pkdaily">20 kcal</p>
+                <p class="ppdaily">10 %</p>
+            </div>
+            <div class="fat-daily result-title">
+                <h2>Fats</h2>
+                <p class="fgdaily">20 g</p>
+                <p class="fkdaily">20 kcal</p>
+                <p class="fpdaily">10 %</p>
+            </div>
+            <div class="Carbs-daily result-title">
+                <h2>Carbs</h2>
+                <p class="cgdaily">20 g</p>
+                <p class="ckdaily">20 kcal</p>
+                <p class="cpdaily">10 %</p>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>
+
+<!-- credit icon
+    <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> 
+-->
