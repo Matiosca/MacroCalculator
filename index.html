@@ -19,13 +19,14 @@
         <div class="first-section">
             <form action="macroForm" class="macro-form">
                 <div class="daily-intake">
-                    <p>Calories per day <input type="number" name="kcal-daily" class="kcal-daily-box" placeholder="2000"> Kcal</p>
+                    <p>Calories per day <input type="number" id="kcalDaily" name="kcal-daily" class="kcal-daily-box" placeholder="2000"> Kcal</p>
                 </div>
                 <div class="macro-kilo">
                     <!-- BODYWEIGHT -->
                     <div class="bodyw">
-                        <p>bodyweight&nbsp;</p> 
-                        <input type="number" name="bodyweight" class="bodyw-box">
+                        <p>bodyweight</p>
+                        &nbsp;
+                        <input type="number" id="bodyWeight" name="bodyweight" class="bodyw-box">
                         &nbsp;
                         <!-- UNIT SELECTOR KG / LB-->
                         <div class="bw-radio">
@@ -38,20 +39,34 @@
                     </div>
                     <!-- PROTEINS GRAMS PER Kg/Lb -->
                     <div class="pro-g-kg">
-                        <p class="pkilo">proteins <i class="far fa-question-circle fa-xs"></i></p>
+                        <p>proteins <i class="far fa-question-circle fa-xs"></i></p>
                         &nbsp;
-                        <input type="number" name="protein-kilo" class="pro-g-kg-box">
-                        <!-- UNIT SELECTOR g/KG / g/LB-->
-                        <div class="gKg-radio">
-                                <input type="radio" id="radiogKg" name="radiogKg" value="gkg" checked>
-                                <label for="radioKg">g/Kg</label>
+                        <input type="number" id="proteingKg" name="protein-kilo" class="pro-g-kg-box">
+                        &nbsp;
+                        <!-- UNIT SELECTOR PROTEINS g/KG / g/LB-->
+                        <div class="p-gKg-radio">
+                            <input type="radio" id="radioProgKg" name="radioPgKg" value="pgkg" checked>
+                            <label for="radioProgKg">g/Kg</label>
 
-                                <input type="radio" id="radiogLb" name="radiogKg" value="glb">
-                                <label for="radioLb">g/Lb</label>
-                            </div>
+                            <input type="radio" id="radioProgLb" name="radioPgKg" value="pglb">
+                            <label for="radioProgLb">g/Lb</label>
+                        </div>
                     </div>
                     <!-- FATS GRAMS PER Kg/Lb -->
-                    <p class="fkilo">fats <input type="number" name="fat-kilo"> g/kg</p>
+                    <div class="fat-g-kg">
+                        <p>fats <i class="far fa-question-circle fa-xs"></i></p>
+                        &nbsp;
+                        <input type="number" id="fatgKg" name="fat-kilo" class="fat-g-kg-box">
+                        &nbsp;
+                        <!-- UNIT SELECTOR FATS g/KG / g/LB -->
+                        <div class="f-gKg-radio">
+                            <input type="radio" id="radioFatgKg" name="radioFgKg" value="fgkg" checked>
+                            <label for="radioFatgKg">g/Kg</label>
+
+                            <input type="radio" id="radioFatgLb" name="radioFgKg" value="fglb">
+                            <label for="radioFatgLb">g/Lb</label>
+                        </div>
+                    </div>
                 </div>
             </form>
             <div class="calc-btn">
@@ -79,8 +94,9 @@
             </div>
         </div>
     </main>
-    
+
 </body>
+<script src="app.js"></script>
 </html>
 
 <!-- credit icon

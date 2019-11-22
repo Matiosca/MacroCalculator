@@ -101,11 +101,19 @@ header h1 {
     align-items: center;
 }
 
+.bodyw p {
+    width: 180px;
+}
+
 .bodyw-box {
     width: 70px;
     height: 40px;
     font-size: 1.4rem;
     text-align: center;
+}
+
+.bw-radio {
+    width: 165px;
 }
 
 /* Bodyweight unit selector kg-lb */
@@ -145,6 +153,10 @@ header h1 {
     align-items: center;
 }
 
+.pro-g-kg p {
+    width: 180px;
+}
+
 .pro-g-kg-box {
     width: 70px;
     height: 40px;
@@ -152,13 +164,17 @@ header h1 {
     text-align: center;
 }
 
+.p-gKg-radio {
+    width: 165px;
+}
+
 /* Proteins g/kg g/lb UNIT SELECTOR */
 
-.gKg-radio input[type="radio"] {
+.p-gKg-radio input[type="radio"] {
     display: none;
 }
 
-.gKg-radio label {
+.p-gKg-radio label {
     height: 3rem;
     background-color: var(--main-bg-color);
     padding: 5px 15px;
@@ -167,15 +183,67 @@ header h1 {
     border-radius: 4px;
 }
 
-.gKg-radio label:hover {
+.p-gKg-radio label:hover {
   background-color: #dfd;
 }
 
-.gKg-radio input[type="radio"]:focus + label {
+.p-gKg-radio input[type="radio"]:focus + label {
     border: 2px solid rgb(255, 255, 255);
 }
 
-.gKg-radio input[type="radio"]:checked + label {
+.p-gKg-radio input[type="radio"]:checked + label {
+    background-color: var(--main-bg-color);
+    border: 2px solid var(--main-accent-color);
+}
+
+/* Fats g/kg g/lb TEXT BOX */
+
+.fat-g-kg {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fat-g-kg p {
+    width: 180px;
+}
+
+.fat-g-kg-box {
+    width: 70px;
+    height: 40px;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.fat-gKg-radio {
+    width: 165px;
+}
+
+/* Fats g/kg g/lb UNIT SELECTOR */
+
+.f-gKg-radio input[type="radio"] {
+    display: none;
+}
+
+.f-gKg-radio label {
+    height: 3rem;
+    background-color: var(--main-bg-color);
+    padding: 5px 15px;
+    font-size: 1.1rem;
+    border: 2px solid #000000;
+    border-radius: 4px;
+}
+
+.f-gKg-radio label:hover {
+  background-color: #dfd;
+}
+
+.f-gKg-radio input[type="radio"]:focus + label {
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.f-gKg-radio input[type="radio"]:checked + label {
     background-color: var(--main-bg-color);
     border: 2px solid var(--main-accent-color);
 }
