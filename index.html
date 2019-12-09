@@ -17,7 +17,7 @@
     <div class="rectangle-bg"></div>
     <main>
         <div class="first-section">
-            <form action="macroForm" class="macro-form">
+            <form action="macroForm" id="macroForm" class="macro-form">
                 <div class="daily-intake">
                     <p>Calories per day <input type="number" id="kcalDaily" name="kcal-daily" class="kcal-daily-box" placeholder="2000"> Kcal</p>
                 </div>
@@ -54,7 +54,7 @@
                     </div>
                     <!-- FATS GRAMS PER Kg/Lb -->
                     <div class="fat-g-kg">
-                        <p>fats <i id="infoIcon" class="far fa-question-circle fa-s"></i></p>
+                        <p>fats <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a></p>
                         &nbsp;
                         <input type="number" id="fatgKg" name="fat-kilo" class="fat-g-kg-box">
                         &nbsp;
@@ -80,27 +80,27 @@
             </div>
 
             <div class="calc-btn">
-                <button id="calculate">Calculate</button>
+                <input type="button" onclick="test()" value="Calculate">
             </div>
         </div>
         <div class="form-result">
             <div class="protein-daily result-title">
                 <h2>Proteins</h2>
-                <p class="pgdaily">20 g</p>
-                <p class="pkdaily">20 kcal</p>
-                <p class="ppdaily">10 %</p>
+                <p id="pgdaily">20 g</p>
+                <p id="pkdaily">20 kcal</p>
+                <p id="ppdaily">10 %</p>
             </div>
             <div class="fat-daily result-title">
                 <h2>Fats</h2>
-                <p class="fgdaily">20 g</p>
-                <p class="fkdaily">20 kcal</p>
-                <p class="fpdaily">10 %</p>
+                <p id="fgdaily">20 g</p>
+                <p id="fkdaily">20 kcal</p>
+                <p id="fpdaily">10 %</p>
             </div>
             <div class="Carbs-daily result-title">
                 <h2>Carbs</h2>
-                <p class="cgdaily">20 g</p>
-                <p class="ckdaily">20 kcal</p>
-                <p class="cpdaily">10 %</p>
+                <p id="cgdaily">20 g</p>
+                <p id="ckdaily">20 kcal</p>
+                <p id="cpdaily">10 %</p>
             </div>
         </div>
     </main>

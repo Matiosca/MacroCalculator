@@ -24,6 +24,11 @@ input[type=number] {
     font-family: 'Montserrat', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .rectangle-bg {
     width: 5000px;
     height: 200px;
@@ -146,6 +151,11 @@ header h1 {
 
 .fa-question-circle {
     cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.fa-question-circle:hover {
+    transform: scale(1.4);
 }
 
 /* Styling and adding functions to the modal window */
@@ -173,9 +183,10 @@ header h1 {
     width: 400px;
 	position: relative;
 	margin: 10% auto;
-	padding: 5px 20px 13px 20px;
+    padding: 5px 20px 13px 20px;
+    border: 2px solid var(--main-accent-color);
 	border-radius: 10px;
-	background: #fff;
+	background: var(--main-bg-color);
 	background: -moz-linear-gradient(#fff, #999);
 	background: -webkit-linear-gradient(#fff, #999);
 	background: -o-linear-gradient(#fff, #999); 
@@ -201,7 +212,7 @@ header h1 {
 }
 
 .close:hover { 
-    background: #00d9ff; 
+    background: var(--main-accent-color); 
 }
 
 /* Proteins g/kg g/lb TEXT BOX */
@@ -316,16 +327,22 @@ header h1 {
     justify-content: center;
 }
 
-.calc-btn button {
+.calc-btn input {
     border: none;
     border-radius: 20px;
     padding: 1rem;
     font-size: 2rem;
     background: rgb(90, 190, 87);
+    transition: all .2s ease-in-out;
 }
 
-.calc-btn button:hover {
+.calc-btn input:hover {
     cursor: pointer;
+    transform: scale(1.2);
+}
+
+.calc-btn input:focus {
+    outline: 0;
 }
 
 /* SECOND PART FORM RESULT*/
