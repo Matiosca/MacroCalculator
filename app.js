@@ -12,7 +12,7 @@ var ppercDaily_p = document.getElementById('ppdaily');
 
 var fgDaily_p = document.getElementById('fgdaily');
 var fKcalDaily_p = document.getElementById('fkdaily');
-var fpercDaily_p = document.getElementById('fpdaily')
+var fpercDaily_p = document.getElementById('fpdaily');
 
 var cgDaily_p = document.getElementById('cgdaily');
 var cKcalDaily_p = document.getElementById('ckdaily');
@@ -30,8 +30,10 @@ function test() {
     ppercDaily_p.innerHTML = calcProPercent() + ' %';
     fgDaily_p.innerHTML = calcDailyFatG() + ' g';
     fKcalDaily_p.innerHTML = calcDailyFatKcal() + ' Kcal';
+    fpercDaily_p.innerHTML = calcFatPercent() + ' %';
     cgDaily_p.innerHTML = calcDailyCarbG() + ' g';
     cKcalDaily_p.innerHTML = calcDailyCarbKcal() + ' Kcal';
+    cpercDaily_p.innerHTML = calcCarbPercent() + ' %';
 }
 
 function product() {
@@ -63,6 +65,11 @@ function calcDailyFatKcal() {
     return dailyFatKcal = calcDailyFatG() * F_KCALG;
 }
 
+function calcFatPercent() {
+    var fatPercent = (calcDailyFatKcal() * 100) / kcalDaily.value;
+    return fatPercent.toFixed(1);
+}
+
 // Calculate daily Carbs grams and kcal using F and P daily kcal
 function calcDailyCarbKcal() {
     return dailyCarbKcal = kcalDaily.value - (calcDailyProKcal() + calcDailyFatKcal());
@@ -70,5 +77,10 @@ function calcDailyCarbKcal() {
 
 function calcDailyCarbG() {
     return dailyCarbG = calcDailyCarbKcal() / PC_KCALG;
+}
+
+function calcCarbPercent() {
+    var carbPercent = (calcDailyCarbKcal() * 100) / kcalDaily.value;
+    return carbPercent.toFixed(1);
 }
 

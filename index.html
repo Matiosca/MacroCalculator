@@ -19,14 +19,14 @@
         <div class="first-section">
             <form action="macroForm" id="macroForm" class="macro-form">
                 <div class="daily-intake">
-                    <p>Calories per day <input type="number" id="kcalDaily" name="kcal-daily" class="kcal-daily-box" placeholder="2000"> Kcal</p>
+                    <p>Calories per day <input type="number" id="kcalDaily" name="kcal-daily" class="kcal-daily-box" placeholder="2728"> Kcal</p>
                 </div>
                 <div class="macro-kilo">
                     <!-- BODYWEIGHT -->
                     <div class="bodyw">
                         <p>bodyweight</p>
                         &nbsp;
-                        <input type="number" id="bodyWeight" name="bodyweight" class="bodyw-box">
+                        <input type="number" id="bodyWeight" name="bodyweight" class="bodyw-box" placeholder="80">
                         &nbsp;
                         <!-- UNIT SELECTOR KG / LB-->
                         <div class="bw-radio">
@@ -41,7 +41,7 @@
                     <div class="pro-g-kg">
                         <p>proteins <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a> </p>
                         &nbsp;
-                        <input type="number" id="proteingKg" name="protein-kilo" class="pro-g-kg-box">
+                        <input type="number" id="proteingKg" name="protein-kilo" class="pro-g-kg-box" placeholder="1.5">
                         &nbsp;
                         <!-- UNIT SELECTOR PROTEINS g/KG / g/LB-->
                         <div class="p-gKg-radio">
@@ -56,7 +56,7 @@
                     <div class="fat-g-kg">
                         <p>fats <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a></p>
                         &nbsp;
-                        <input type="number" id="fatgKg" name="fat-kilo" class="fat-g-kg-box">
+                        <input type="number" id="fatgKg" name="fat-kilo" class="fat-g-kg-box" placeholder="0.9">
                         &nbsp;
                         <!-- UNIT SELECTOR FATS g/KG / g/LB -->
                         <div class="f-gKg-radio">
@@ -73,9 +73,28 @@
             <div id="openModal" class="modal-dialog">
                 <div>
                     <a href="#close" title="Close" class="close">X</a>
-                    <h2>Test Title</h2>
-                    <p>test test test test test test test test test test test test
-                    test test test test test test test test test test test test</p>
+                    <h2>How to determine grams ratio</h2>
+                    <p>Daily calories intake is the main deciding factor that leads to an increase or decrease in bodyweight. <br>
+                        Equally important are the sources from where we get these calories. The three main sources are called 
+                        Macronutrients or "macros" and are respectively proteins, fats and carbohydrates. <br>
+                        Basic recommendation for the average adult to maintain weight are: <br>
+                        Average adult: 30 years-old - 2728 Kcal - 1.78m/5'10" - 80kg/176Lb
+                        <table>
+                            <tr>
+                                <th>Proteins 15~20%</th>
+                                <th>Fats 20~25%</th>
+                            </tr>
+                            <tr>
+                                <td>1.5 g/Kg</td>
+                                <td>0.6 g/Kg</td>
+                            </tr>
+                            <tr>
+                                <td>0.9 g/Lb</td>
+                                <td>0.4 g/Lb</td>
+                            </tr>
+                        </table>
+                        These intakes greatly varie based on people training and diet.
+                    </p>
                 </div>
             </div>
 
@@ -86,21 +105,21 @@
         <div class="form-result">
             <div class="protein-daily result-title">
                 <h2>Proteins</h2>
-                <p id="pgdaily">20 g</p>
-                <p id="pkdaily">20 kcal</p>
-                <p id="ppdaily">10 %</p>
+                <p id="pgdaily">120 g</p>
+                <p id="pkdaily">480 kcal</p>
+                <p id="ppdaily">17.6 %</p>
             </div>
             <div class="fat-daily result-title">
                 <h2>Fats</h2>
-                <p id="fgdaily">20 g</p>
-                <p id="fkdaily">20 kcal</p>
-                <p id="fpdaily">10 %</p>
+                <p id="fgdaily">72 g</p>
+                <p id="fkdaily">648 kcal</p>
+                <p id="fpdaily">23.8 %</p>
             </div>
             <div class="Carbs-daily result-title">
                 <h2>Carbs</h2>
-                <p id="cgdaily">20 g</p>
-                <p id="ckdaily">20 kcal</p>
-                <p id="cpdaily">10 %</p>
+                <p id="cgdaily">400 g</p>
+                <p id="ckdaily">1600 kcal</p>
+                <p id="cpdaily">58.7 %</p>
             </div>
         </div>
     </main>
