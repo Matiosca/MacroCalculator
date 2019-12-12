@@ -23,6 +23,29 @@ var bodyWeight = document.getElementById("bodyWeight");
 var protein_gKg = document.getElementById("proteingKg");
 var fat_gKg = document.getElementById("fatgKg");
 
+// show and hide metric/imperial unit after selecting radio
+/*function toggleUnit() {
+    if (document.getElementById('imperial').checked) {
+        document.getElementById('unitMetric').classList.add("hide");
+        document.getElementById('unitImperial').classList.remove("hide");
+    } else {
+        document.getElementById('unitMetric').classList.remove("hide");
+        document.getElementById('unitImperial').classList.add("hide");
+    }
+}*/
+function toggleUnit() {
+    var imperial = document.getElementById('imperial');
+    var metricLabel = document.getElementById('unitMetric')
+
+    if (imperial.checked) {
+        metricLabel.classList.add("hide");
+        document.getElementById('unitImperial').classList.remove("hide");
+    } else {
+        document.getElementById('unitMetric').classList.remove("hide");
+        document.getElementById('unitImperial').classList.add("hide");
+    }
+}
+
 //calculate function upon pressing button
 function test() {
     pgDaily_p.innerHTML = calcDailyProG() + ' g';
@@ -32,7 +55,7 @@ function test() {
     fgDaily_p.innerHTML = calcDailyFatG() + ' g';
     fKcalDaily_p.innerHTML = calcDailyFatKcal() + ' Kcal';
     fpercDaily_p.innerHTML = calcFatPercent() + ' %';
-    
+
     cgDaily_p.innerHTML = calcDailyCarbG() + ' g';
     cKcalDaily_p.innerHTML = calcDailyCarbKcal() + ' Kcal';
     cpercDaily_p.innerHTML = calcCarbPercent() + ' %';

@@ -18,10 +18,10 @@
     <main>
         <div class="first-section">
             <div class="metric-imperial">
-                <input type="radio" id="metric" name="unitSystem" value="Kg" checked>
+                <input type="radio" id="metric" name="unitSystem" value="Kg" checked onclick="toggleUnit()">
                 <label for="metric">Metric</label>
 
-                <input type="radio" id="imperial" name="unitSystem" value="Lb">
+                <input type="radio" id="imperial" name="unitSystem" value="Lb" onclick="toggleUnit()">
                 <label for="imperial">Imperial</label>
             </div>
             <form action="macroForm" id="macroForm" class="macro-form">
@@ -36,44 +36,41 @@
                         <input type="number" id="bodyWeight" name="bodyweight" class="bodyw-box" placeholder="80">
                         &nbsp;
                         <!-- UNIT SELECTOR KG / LB-->
-                        <div class="bw-radio">
-                            <input type="radio" id="radioKg" name="radioBW" value="kg" checked>
-                            <label for="radioKg">Kg</label>
-
-                            <input type="radio" id="radioLb" name="radioBW" value="lb">
-                            <label for="radioLb">Lb</label>
+                        <div id="unitMetric" class="unit-kilo unit-selector">
+                            <p>Kg</p>
+                        </div>
+                        <div id="unitImperial" class="unit-pound unit-selector hide">
+                            <p>Lb</p>
                         </div>
                     </div>
                 </div>
                 <div class="macro-kilo">
                     <!-- PROTEINS GRAMS PER Kg/Lb -->
                     <div class="pro-g-kg">
-                        <p>proteins <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a> </p>
+                        <p>Proteins <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a> </p>
                         &nbsp;
                         <input type="number" id="proteingKg" name="protein-kilo" class="pro-g-kg-box" placeholder="1.5">
                         &nbsp;
                         <!-- UNIT SELECTOR PROTEINS g/KG / g/LB-->
-                        <div class="p-gKg-radio">
-                            <input type="radio" id="radioProgKg" name="radioPgKg" value="pgkg" checked>
-                            <label for="radioProgKg">g/Kg</label>
-
-                            <input type="radio" id="radioProgLb" name="radioPgKg" value="pglb">
-                            <label for="radioProgLb">g/Lb</label>
+                        <div id="unitMetricPro" class="unit-kilo unit-selector">
+                            <p>g/Kg</p>
+                            </div>
+                        <div id="unitImperial" class="unit-grams unit-selector hide">
+                            <p>g/Lb</p>
                         </div>
                     </div>
                     <!-- FATS GRAMS PER Kg/Lb -->
                     <div class="fat-g-kg">
-                        <p>fats <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a></p>
+                        <p>Fats <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a></p>
                         &nbsp;
                         <input type="number" id="fatgKg" name="fat-kilo" class="fat-g-kg-box" placeholder="0.9">
                         &nbsp;
                         <!-- UNIT SELECTOR FATS g/KG / g/LB -->
-                        <div class="f-gKg-radio">
-                            <input type="radio" id="radioFatgKg" name="radioFgKg" value="fgkg" checked>
-                            <label for="radioFatgKg">g/Kg</label>
-
-                            <input type="radio" id="radioFatgLb" name="radioFgKg" value="fglb">
-                            <label for="radioFatgLb">g/Lb</label>
+                        <div id="unitMetric" class="unit-grams unit-selector">
+                            <p>g/Kg</p>
+                        </div>
+                        <div id="unitImperial" class="unit-grams unit-selector hide">
+                            <p>g/Lb</p>
                         </div>
                     </div>
                 </div>
@@ -134,6 +131,7 @@
     </main>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.14.2/d3.min.js"></script>
 <script src="app.js"></script>
 </html>
 
