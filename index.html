@@ -17,11 +17,18 @@
     <div class="rectangle-bg"></div>
     <main>
         <div class="first-section">
+            <div class="metric-imperial">
+                <input type="radio" id="metric" name="unitSystem" value="Kg" checked>
+                <label for="metric">Metric</label>
+
+                <input type="radio" id="imperial" name="unitSystem" value="Lb">
+                <label for="imperial">Imperial</label>
+            </div>
             <form action="macroForm" id="macroForm" class="macro-form">
-                <div class="daily-intake">
-                    <p>Calories per day <input type="number" id="kcalDaily" name="kcal-daily" class="kcal-daily-box" placeholder="2728"> Kcal</p>
-                </div>
-                <div class="macro-kilo">
+                <div class="kcal-bw">
+                    <div class="daily-intake">
+                        <p>Calories per day <input type="number" id="kcalDaily" name="kcal-daily" class="kcal-daily-box" placeholder="2728"> Kcal</p>
+                    </div>
                     <!-- BODYWEIGHT -->
                     <div class="bodyw">
                         <p>bodyweight</p>
@@ -37,6 +44,8 @@
                             <label for="radioLb">Lb</label>
                         </div>
                     </div>
+                </div>
+                <div class="macro-kilo">
                     <!-- PROTEINS GRAMS PER Kg/Lb -->
                     <div class="pro-g-kg">
                         <p>proteins <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a> </p>

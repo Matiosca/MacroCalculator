@@ -28,9 +28,11 @@ function test() {
     pgDaily_p.innerHTML = calcDailyProG() + ' g';
     pKcalDaily_p.innerHTML = calcDailyProKcal() + ' Kcal';
     ppercDaily_p.innerHTML = calcProPercent() + ' %';
+
     fgDaily_p.innerHTML = calcDailyFatG() + ' g';
     fKcalDaily_p.innerHTML = calcDailyFatKcal() + ' Kcal';
     fpercDaily_p.innerHTML = calcFatPercent() + ' %';
+    
     cgDaily_p.innerHTML = calcDailyCarbG() + ' g';
     cKcalDaily_p.innerHTML = calcDailyCarbKcal() + ' Kcal';
     cpercDaily_p.innerHTML = calcCarbPercent() + ' %';
