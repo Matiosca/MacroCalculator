@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <!--FontAwesome-->
     <script src="https://kit.fontawesome.com/4c7b3d1262.js" crossorigin="anonymous"></script>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Macro Calculator</title>
 </head>
 <body>
@@ -31,7 +33,7 @@
                     </div>
                     <!-- BODYWEIGHT -->
                     <div class="bodyw">
-                        <p>bodyweight</p>
+                        <p>Bodyweight</p>
                         &nbsp;
                         <input type="number" id="bodyWeight" name="bodyweight" class="bodyw-box" placeholder="80">
                         &nbsp;
@@ -55,7 +57,7 @@
                         <div id="unitMetricPro" class="unit-kilo unit-selector">
                             <p>g/Kg</p>
                             </div>
-                        <div id="unitImperial" class="unit-grams unit-selector hide">
+                        <div id="unitImperialPro" class="unit-grams unit-selector hide">
                             <p>g/Lb</p>
                         </div>
                     </div>
@@ -66,10 +68,10 @@
                         <input type="number" id="fatgKg" name="fat-kilo" class="fat-g-kg-box" placeholder="0.9">
                         &nbsp;
                         <!-- UNIT SELECTOR FATS g/KG / g/LB -->
-                        <div id="unitMetric" class="unit-grams unit-selector">
+                        <div id="unitMetricFat" class="unit-grams unit-selector">
                             <p>g/Kg</p>
                         </div>
-                        <div id="unitImperial" class="unit-grams unit-selector hide">
+                        <div id="unitImperialFat" class="unit-grams unit-selector hide">
                             <p>g/Lb</p>
                         </div>
                     </div>
@@ -79,12 +81,19 @@
             <div id="openModal" class="modal-dialog">
                 <div>
                     <a href="#close" title="Close" class="close">X</a>
-                    <h2>How to determine grams ratio</h2>
-                    <p>Daily calories intake is the main deciding factor that leads to an increase or decrease in bodyweight. <br>
-                        Equally important are the sources from where we get these calories. The three main sources are called 
-                        Macronutrients or "macros" and are respectively proteins, fats and carbohydrates. <br>
-                        Basic recommendation for the average adult to maintain weight are: <br>
-                        Average adult: 30 years-old - 2728 Kcal - 1.78m/5'10" - 80kg/176Lb
+                    <h2>Grams to bodyweight ratio</h2>
+                    <p>Diets are determined by a specific ratio between three Macronutrients</p>
+                        <div class="modal-dialog-macro">
+                            <ul>
+                                <li>Proteins</li>
+                                <li>Fats</li>
+                                <li>Carbohydrates</li>
+                            </ul>
+                        </div>
+                    <p>    
+                        Said ratio varies for each individual person, his activity level and diet goal, there are anyway common average grounds. <br>
+                        For example: <br>
+                    </p>
                         <table>
                             <tr>
                                 <th>Proteins 15~20%</th>
@@ -92,20 +101,22 @@
                             </tr>
                             <tr>
                                 <td>1.5 g/Kg</td>
-                                <td>0.6 g/Kg</td>
+                                <td>0.9 g/Kg</td>
                             </tr>
                             <tr>
-                                <td>0.9 g/Lb</td>
+                                <td>0.68 g/Lb</td>
                                 <td>0.4 g/Lb</td>
                             </tr>
                         </table>
-                        These intakes greatly varie based on people training and diet.
+                        Average adult: 30 years-old - 2728 Kcal - 1.78m/5'10" - 80kg/176Lb 
+                    <p>
+                        
                     </p>
                 </div>
             </div>
 
             <div class="calc-btn">
-                <input type="button" onclick="test()" value="Calculate">
+                <input type="button" onclick="calculate()" value="Calculate">
             </div>
         </div>
         <div class="form-result">
@@ -117,8 +128,8 @@
             </div>
             <div class="fat-daily result-title">
                 <h2>Fats</h2>
-                <p id="fgdaily">72 g</p>
-                <p id="fkdaily">648 kcal</p>
+                <p id="fgdaily" class="tofix">72 g</p>
+                <p id="fkdaily" class="tofix">648 kcal</p>
                 <p id="fpdaily">23.8 %</p>
             </div>
             <div class="Carbs-daily result-title">
@@ -131,7 +142,6 @@
     </main>
 
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.14.2/d3.min.js"></script>
 <script src="app.js"></script>
 </html>
 

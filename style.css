@@ -28,6 +28,14 @@ input[type=number] {
     font-family: 'Montserrat', sans-serif;
 }
 
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -127,6 +135,10 @@ header h1 {
     align-items: center;
 }
 
+.daily-intake, .pro-g-kg {
+    margin-bottom: 3rem;
+}
+
 .kcal-daily-box {
     width: 80px;
     height: 40px;
@@ -154,11 +166,11 @@ header h1 {
 }
 
 .unit-selector {
-    border: 2px solid var(--main-accent-color);
+    border-bottom: 2px solid var(--main-accent-color);
     border-radius: 8px;
-    width: 50px;
-    height: 45px;
-    font-size: 1.1rem;
+    width: 60px;
+    height: 40px;
+    font-size: 1.3rem;
     text-align: center;
     line-height: 45px;
 }
@@ -191,6 +203,35 @@ header h1 {
 .modal-dialog:target {
     opacity: 1;
     pointer-events: auto;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.modal-dialog h2 {
+    text-align: center;
+    margin: 2rem 0;
+    font-weight: 500;
+    font-size: 2rem;
+}
+
+.modal-dialog p {
+    font-size: 1.2rem;
+}
+
+.modal-dialog-macro {
+    margin: 1.5rem auto;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.modal-dialog-macro ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modal-dialog table {
+    display: flex;
+    justify-content: center;
 }
 
 .modal-dialog > div {
@@ -201,9 +242,6 @@ header h1 {
     border: 2px solid var(--main-accent-color);
 	border-radius: 10px;
 	background: var(--main-bg-color);
-	background: -moz-linear-gradient(#fff, #999);
-	background: -webkit-linear-gradient(#fff, #999);
-	background: -o-linear-gradient(#fff, #999); 
 }
 
 .close {

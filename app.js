@@ -23,31 +23,55 @@ var bodyWeight = document.getElementById("bodyWeight");
 var protein_gKg = document.getElementById("proteingKg");
 var fat_gKg = document.getElementById("fatgKg");
 
-// show and hide metric/imperial unit after selecting radio
-/*function toggleUnit() {
-    if (document.getElementById('imperial').checked) {
-        document.getElementById('unitMetric').classList.add("hide");
-        document.getElementById('unitImperial').classList.remove("hide");
-    } else {
-        document.getElementById('unitMetric').classList.remove("hide");
-        document.getElementById('unitImperial').classList.add("hide");
-    }
-}*/
-function toggleUnit() {
-    var imperial = document.getElementById('imperial');
-    var metricLabel = document.getElementById('unitMetric')
+var imperial = document.getElementById('imperial');
+var metricLabel = document.getElementById('unitMetric');
+var imperialLabel = document.getElementById('unitImperial');
+var metricProLabel = document.getElementById('unitMetricPro');
+var imperialProLabel = document.getElementById('unitImperialPro');
+var metricFatLabel = document.getElementById('unitMetricFat');
+var imperialFatLabel = document.getElementById('unitImperialFat');
 
+// show and hide metric/imperial unit after selecting radio
+function toggleUnit() {
     if (imperial.checked) {
         metricLabel.classList.add("hide");
-        document.getElementById('unitImperial').classList.remove("hide");
+        imperialLabel.classList.remove("hide");
+        metricProLabel.classList.add("hide");
+        imperialProLabel.classList.remove("hide");
+        metricFatLabel.classList.add("hide");
+        imperialFatLabel.classList.remove("hide");
     } else {
-        document.getElementById('unitMetric').classList.remove("hide");
-        document.getElementById('unitImperial').classList.add("hide");
+        metricLabel.classList.remove("hide");
+        imperialLabel.classList.add("hide");
+        metricProLabel.classList.remove("hide");
+        imperialProLabel.classList.add("hide");
+        metricFatLabel.classList.remove("hide");
+        imperialFatLabel.classList.add("hide");
     }
 }
 
+// test function for imperial and metric
+function calculate() {
+    if (imperial.checked) {
+        var bodyWeight = bodyWeight * 2.2;
+        var protein_gKg = protein_gKg / 2.2;
+        var fat_gKg = fat_gKg / 2.2;
+        calculateMetric();
+    } else {
+        calculateMetric();
+    }
+}
+
+// trying to apply tofixed to every p in macro results
+// probably need to create array and use for each
+function fixresults() {
+    document.getElementsByClassName('.tofix').toFixed(1);
+}
+
+console.log(fixresults());
+
 //calculate function upon pressing button
-function test() {
+function calculateMetric() {
     pgDaily_p.innerHTML = calcDailyProG() + ' g';
     pKcalDaily_p.innerHTML = calcDailyProKcal() + ' Kcal';
     ppercDaily_p.innerHTML = calcProPercent() + ' %';
@@ -59,12 +83,6 @@ function test() {
     cgDaily_p.innerHTML = calcDailyCarbG() + ' g';
     cKcalDaily_p.innerHTML = calcDailyCarbKcal() + ' Kcal';
     cpercDaily_p.innerHTML = calcCarbPercent() + ' %';
-}
-
-function product() {
-    x = bodyWeight.value;
-    y = protein_gKg.value;
-    return x * y;
 }
 
 // Calculate daily proteins kcal intake and create variable for daily P grams
@@ -95,7 +113,7 @@ function calcFatPercent() {
     return fatPercent.toFixed(1);
 }
 
-// Calculate daily Carbs grams and kcal using F and P daily kcal
+// Calculate daily carbs grams and kcal using F and P daily kcal
 function calcDailyCarbKcal() {
     return dailyCarbKcal = kcalDaily.value - (calcDailyProKcal() + calcDailyFatKcal());
 }
