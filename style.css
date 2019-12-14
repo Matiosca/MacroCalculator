@@ -41,19 +41,14 @@ a {
     color: inherit;
 }
 
-.rectangle-bg {
-    width: 5000px;
-    height: 200px;
-    background: var(--main-accent-color);
-    position: absolute;
-    top: 850px;
-    right: 0px;
-    z-index: -5;
-    transform: rotate(-29deg);
+body {
+    background-color: #606061;
+    background-image: -webkit-linear-gradient(45deg, #606061 50%, #141414 50%);
 }
 
-body {
-    background: #1a1a1a;
+.bg-gradient {
+    background-color: #606061;
+    background-image: -webkit-linear-gradient(45deg, #606061 50%, #141414 50%);
 }
 
 header {
@@ -74,8 +69,8 @@ header h1 {
     background: var(--main-bg-color);
     padding: 1rem;
     margin: 0 auto;
-    border-top: 4px solid var(--main-accent-color);
-    border-bottom: 4px solid var(--main-accent-color);
+    border-top: 2px solid var(--main-accent-color);
+    border-bottom: 2px solid var(--main-accent-color);
 }
 
 /*centering and styling metric imperial radio*/
@@ -230,8 +225,14 @@ header h1 {
 }
 
 .modal-dialog table {
+    margin:2rem auto;
     display: flex;
     justify-content: center;
+    font-size: 1.2rem;
+}
+
+.modal-dialog table th {
+    padding: 1.4rem 1rem;
 }
 
 .modal-dialog > div {
@@ -328,8 +329,7 @@ header h1 {
 /* SECOND PART FORM RESULT*/
 .form-result {
     width: 70%;
-    border-radius: 20px;
-    border: 4px solid var(--main-accent-color);
+    border: 3px solid var(--main-accent-color);
     background: var(--main-bg-color);
     margin: 2rem auto;
     padding: 2rem;
@@ -359,5 +359,5 @@ header h1 {
 .result-title p {
     line-height: 3rem;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 500;
 }

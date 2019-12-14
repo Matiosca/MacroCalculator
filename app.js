@@ -2,10 +2,6 @@ const theForm = document.forms["macroForm"];
 const PC_KCALG = 4;
 const F_KCALG = 9;
 
-var bodyWeightUnit = ['kg', 'lb'];
-var proteinPerKiloUnit = ['pgkg', 'pgLb'];
-var fatPerKiloUnit = ['fgKg', 'fgLb'];
-
 var pgDaily_p = document.getElementById('pgdaily');
 var pKcalDaily_p = document.getElementById('pkdaily');
 var ppercDaily_p = document.getElementById('ppdaily');
@@ -24,29 +20,18 @@ var protein_gKg = document.getElementById("proteingKg");
 var fat_gKg = document.getElementById("fatgKg");
 
 var imperial = document.getElementById('imperial');
-var metricLabel = document.getElementById('unitMetric');
-var imperialLabel = document.getElementById('unitImperial');
-var metricProLabel = document.getElementById('unitMetricPro');
-var imperialProLabel = document.getElementById('unitImperialPro');
-var metricFatLabel = document.getElementById('unitMetricFat');
-var imperialFatLabel = document.getElementById('unitImperialFat');
+
+var unitMetric = $("#unitMetric, #unitMetricPro, #unitMetricFat");
+var unitImperial = $("#unitImperial, #unitImperialPro, #unitImperialFat");
 
 // show and hide metric/imperial unit after selecting radio
 function toggleUnit() {
     if (imperial.checked) {
-        metricLabel.classList.add("hide");
-        imperialLabel.classList.remove("hide");
-        metricProLabel.classList.add("hide");
-        imperialProLabel.classList.remove("hide");
-        metricFatLabel.classList.add("hide");
-        imperialFatLabel.classList.remove("hide");
+        $(unitMetric).addClass("hide");
+        $(unitImperial).removeClass("hide");
     } else {
-        metricLabel.classList.remove("hide");
-        imperialLabel.classList.add("hide");
-        metricProLabel.classList.remove("hide");
-        imperialProLabel.classList.add("hide");
-        metricFatLabel.classList.remove("hide");
-        imperialFatLabel.classList.add("hide");
+        $(unitMetric).removeClass("hide");
+        $(unitImperial).addClass("hide");
     }
 }
 
@@ -62,27 +47,19 @@ function calculate() {
     }
 }
 
-// trying to apply tofixed to every p in macro results
-// probably need to create array and use for each
-function fixresults() {
-    document.getElementsByClassName('.tofix').toFixed(1);
-}
-
-console.log(fixresults());
-
 //calculate function upon pressing button
 function calculateMetric() {
-    pgDaily_p.innerHTML = calcDailyProG() + ' g';
-    pKcalDaily_p.innerHTML = calcDailyProKcal() + ' Kcal';
-    ppercDaily_p.innerHTML = calcProPercent() + ' %';
+    pgDaily_p.innerHTML = calcDailyProG().toFixed(1) + ' g';
+    pKcalDaily_p.innerHTML = calcDailyProKcal().toFixed(1) + ' Kcal';
+    ppercDaily_p.innerHTML = calcProPercent().toFixed(1) + ' %';
 
-    fgDaily_p.innerHTML = calcDailyFatG() + ' g';
-    fKcalDaily_p.innerHTML = calcDailyFatKcal() + ' Kcal';
-    fpercDaily_p.innerHTML = calcFatPercent() + ' %';
+    fgDaily_p.innerHTML = calcDailyFatG().toFixed(1) + ' g';
+    fKcalDaily_p.innerHTML = calcDailyFatKcal().toFixed(1) + ' Kcal';
+    fpercDaily_p.innerHTML = calcFatPercent().toFixed(1) + ' %';
 
-    cgDaily_p.innerHTML = calcDailyCarbG() + ' g';
-    cKcalDaily_p.innerHTML = calcDailyCarbKcal() + ' Kcal';
-    cpercDaily_p.innerHTML = calcCarbPercent() + ' %';
+    cgDaily_p.innerHTML = calcDailyCarbG().toFixed(1) + ' g';
+    cKcalDaily_p.innerHTML = calcDailyCarbKcal().toFixed(1) + ' Kcal';
+    cpercDaily_p.innerHTML = calcCarbPercent().toFixed(1) + ' %';
 }
 
 // Calculate daily proteins kcal intake and create variable for daily P grams
@@ -95,8 +72,7 @@ function calcDailyProKcal() {
 }
 
 function calcProPercent() {
-    var proPercent = (calcDailyProKcal() * 100) / kcalDaily.value;
-    return proPercent.toFixed(1);
+    return proPercent = (calcDailyProKcal() * 100) / kcalDaily.value;
 }
 
 // Calculate daily fats kcal intake and create variable for daily F grams
@@ -109,8 +85,7 @@ function calcDailyFatKcal() {
 }
 
 function calcFatPercent() {
-    var fatPercent = (calcDailyFatKcal() * 100) / kcalDaily.value;
-    return fatPercent.toFixed(1);
+    return fatPercent = (calcDailyFatKcal() * 100) / kcalDaily.value;
 }
 
 // Calculate daily carbs grams and kcal using F and P daily kcal
@@ -123,7 +98,6 @@ function calcDailyCarbG() {
 }
 
 function calcCarbPercent() {
-    var carbPercent = (calcDailyCarbKcal() * 100) / kcalDaily.value;
-    return carbPercent.toFixed(1);
+    return carbPercent = (calcDailyCarbKcal() * 100) / kcalDaily.value;
 }
 
