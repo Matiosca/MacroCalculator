@@ -361,3 +361,33 @@ header h1 {
     font-size: 1.5rem;
     font-weight: 500;
 }
+
+/* Responsive */
+
+@media screen and (max-width: 1000px) {
+    header h1 {
+        letter-spacing: 0.2rem;
+    }
+    
+    .macro-form {
+        flex-direction: column;
+    }
+
+    .macro-kilo {
+        margin-top: 3rem;
+    }
+    
+    .form-result {
+        flex-direction: column;
+    }
+
+    .result-title {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}
