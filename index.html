@@ -1,147 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!--CSS-->
-    <link rel="stylesheet" href="style.css">
-    <!--FontAwesome--> 
+    <link rel="stylesheet" href="style.css" />
+    <!--FontAwesome-->
     <script src="https://kit.fontawesome.com/4c7b3d1262.js" crossorigin="anonymous"></script>
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Macro Calculator</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Macro Calculator</h1>
+      <h1>Macro Calculator</h1>
     </header>
     <main>
-        <div class="first-section">
-            <div class="metric-imperial">
-                <input type="radio" id="metric" name="unitSystem" value="Kg" checked onclick="toggleUnit()">
-                <label for="metric">Metric</label>
+      <div class="first-section">
+        <div class="metric-imperial">
+          <input type="radio" id="metric" name="unitSystem" value="Kg" checked onclick="toggleUnit()"/>
+          <label for="metric">Metric</label>
 
-                <input type="radio" id="imperial" name="unitSystem" value="Lb" onclick="toggleUnit()">
-                <label for="imperial">Imperial</label>
+          <input type="radio" id="imperial" name="unitSystem" value="Lb" onclick="toggleUnit()"/>
+          <label for="imperial">Imperial</label>
+        </div>
+        <form action="macroForm" id="macroForm" class="macro-form">
+          <div class="kcal-bw">
+            <div class="daily-intake">
+              <p>
+                Calories per day
+                <input type="number" id="kcalDaily" name="kcal-daily" class="kcal-daily-box" placeholder="2728" />
+                Kcal
+              </p>
             </div>
-            <form action="macroForm" id="macroForm" class="macro-form">
-                <div class="kcal-bw">
-                    <div class="daily-intake">
-                        <p>Calories per day <input type="number" id="kcalDaily" name="kcal-daily" class="kcal-daily-box" placeholder="2728"> Kcal</p>
-                    </div>
-                    <!-- BODYWEIGHT -->
-                    <div class="bodyw">
-                        <p>Bodyweight</p>
-                        &nbsp;
-                        <input type="number" id="bodyWeight" name="bodyweight" class="bodyw-box" placeholder="80">
-                        &nbsp;
-                        <!-- UNIT SELECTOR KG / LB-->
-                        <div id="unitMetric" class="unit-kilo unit-selector">
-                            <p>Kg</p>
-                        </div>
-                        <div id="unitImperial" class="unit-pound unit-selector hide">
-                            <p>Lb</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="macro-kilo">
-                    <!-- PROTEINS GRAMS PER Kg/Lb -->
-                    <div class="pro-g-kg">
-                        <p>Proteins <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a> </p>
-                        &nbsp;
-                        <input type="number" id="proteingKg" name="protein-kilo" class="pro-g-kg-box" placeholder="1.5">
-                        &nbsp;
-                        <!-- UNIT SELECTOR PROTEINS g/KG / g/LB-->
-                        <div id="unitMetricPro" class="unit-kilo unit-selector">
-                            <p>g/Kg</p>
-                            </div>
-                        <div id="unitImperialPro" class="unit-grams unit-selector hide">
-                            <p>g/Lb</p>
-                        </div>
-                    </div>
-                    <!-- FATS GRAMS PER Kg/Lb -->
-                    <div class="fat-g-kg">
-                        <p>Fats <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a></p>
-                        &nbsp;
-                        <input type="number" id="fatgKg" name="fat-kilo" class="fat-g-kg-box" placeholder="0.9">
-                        &nbsp;
-                        <!-- UNIT SELECTOR FATS g/KG / g/LB -->
-                        <div id="unitMetricFat" class="unit-grams unit-selector">
-                            <p>g/Kg</p>
-                        </div>
-                        <div id="unitImperialFat" class="unit-grams unit-selector hide">
-                            <p>g/Lb</p>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <!-- CREATING MODAL BOX WITH INFO ABOUT PROTEINS AND FATS g/Kg g/Lb-->
-            <div id="openModal" class="modal-dialog">
-                <div>
-                    <a href="#close" title="Close" class="close">X</a>
-                    <h2>Grams to bodyweight ratio</h2>
-                    <p>Diets are determined by a specific ratio between three Macronutrients</p>
-                        <div class="modal-dialog-macro">
-                            <ul>
-                                <li>Proteins</li>
-                                <li>Fats</li>
-                                <li>Carbohydrates</li>
-                            </ul>
-                        </div>
-                    <p>    
-                        Ratio between macros varies with each person, activity level and diet goal.<br>
-                        There anyway average* indications, for example:<br>
-                    </p>
-                        <table>
-                            <tr>
-                                <th>Proteins 15~20%</th>
-                                <th>Fats 20~25%</th>
-                            </tr>
-                            <tr>
-                                <td>1.5 g/Kg</td>
-                                <td>0.9 g/Kg</td>
-                            </tr>
-                            <tr>
-                                <td>0.68 g/Lb</td>
-                                <td>0.4 g/Lb</td>
-                            </tr>
-                        </table>
-                        *average adult: 30 years-old - 2728 Kcal - 1.78m/5'10" - 80kg/176Lb 
-                    <p>
-                        
-                    </p>
-                </div>
+            <!-- BODYWEIGHT -->
+            <div class="bodyw">
+              <p>Bodyweight</p>
+              &nbsp;
+              <input type="number" id="bodyWeight" name="bodyweight" class="bodyw-box" placeholder="80"/>
+              &nbsp;
+              <!-- UNIT SELECTOR KG / LB-->
+              <div id="unitMetric" class="unit-kilo unit-selector">
+                <p>Kg</p>
+              </div>
+              <div id="unitImperial" class="unit-pound unit-selector hide">
+                <p>Lb</p>
+              </div>
             </div>
+          </div>
+          <div class="macro-kilo">
+            <!-- PROTEINS GRAMS PER Kg/Lb -->
+            <div class="pro-g-kg">
+              <p>
+                Proteins
+                <a href="#openModal"><i id="infoIcon" class="far fa-question-circle fa-s"></i></a>
+              </p>
+              &nbsp;
+              <input
+                type="number"
+                id="proteingKg"
+                name="protein-kilo"
+                class="pro-g-kg-box"
+                placeholder="1.5"
+              />
+              &nbsp;
+              <!-- UNIT SELECTOR PROTEINS g/KG / g/LB-->
+              <div id="unitMetricPro" class="unit-kilo unit-selector">
+                <p>g/Kg</p>
+              </div>
+              <div id="unitImperialPro" class="unit-grams unit-selector hide">
+                <p>g/Lb</p>
+              </div>
+            </div>
+            <!-- FATS GRAMS PER Kg/Lb -->
+            <div class="fat-g-kg">
+              <p>
+                Fats
+                <a href="#openModal"
+                  ><i id="infoIcon" class="far fa-question-circle fa-s"></i
+                ></a>
+              </p>
+              &nbsp;
+              <input
+                type="number"
+                id="fatgKg"
+                name="fat-kilo"
+                class="fat-g-kg-box"
+                placeholder="0.9"
+              />
+              &nbsp;
+              <!-- UNIT SELECTOR FATS g/KG / g/LB -->
+              <div id="unitMetricFat" class="unit-grams unit-selector">
+                <p>g/Kg</p>
+              </div>
+              <div id="unitImperialFat" class="unit-grams unit-selector hide">
+                <p>g/Lb</p>
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- CREATING MODAL BOX WITH INFO ABOUT PROTEINS AND FATS g/Kg g/Lb-->
+        <div id="openModal" class="modal-dialog">
+          <div>
+            <a href="#close" title="Close" class="close">X</a>
+            <h2>Grams to bodyweight ratio</h2>
+            <p>
+              Diets are determined by a specific ratio between three
+              Macronutrients
+            </p>
+            <div class="modal-dialog-macro">
+              <ul>
+                <li>Proteins</li>
+                <li>Fats</li>
+                <li>Carbohydrates</li>
+              </ul>
+            </div>
+            <p>
+              Ratio between macros varies with each person, activity level and
+              diet goal.<br />
+              There anyway average* indications, for example:<br />
+            </p>
+            <table>
+              <tr>
+                <th>Proteins 15~20%</th>
+                <th>Fats 20~25%</th>
+              </tr>
+              <tr>
+                <td>1.5 g/Kg</td>
+                <td>0.9 g/Kg</td>
+              </tr>
+              <tr>
+                <td>0.68 g/Lb</td>
+                <td>0.4 g/Lb</td>
+              </tr>
+            </table>
 
-            <div class="calc-btn">
-                <input type="button" onclick="calculate()" value="Calculate">
-            </div>
+            *average adult: 30 years-old - 2728 Kcal - 1.78m/5'10" - 80kg/176Lb
+            <p></p>
+          </div>
         </div>
-        <div class="form-result">
-            <div class="protein-daily result-title">
-                <h2>Proteins</h2>
-                <p id="pgdaily">120 g</p>
-                <p id="pkdaily">480 kcal</p>
-                <p id="ppdaily">17.6 %</p>
-            </div>
-            <div class="fat-daily result-title">
-                <h2>Fats</h2>
-                <p id="fgdaily" class="tofix">72 g</p>
-                <p id="fkdaily" class="tofix">648 kcal</p>
-                <p id="fpdaily">23.8 %</p>
-            </div>
-            <div class="Carbs-daily result-title">
-                <h2>Carbs</h2>
-                <p id="cgdaily">400 g</p>
-                <p id="ckdaily">1600 kcal</p>
-                <p id="cpdaily">58.7 %</p>
-            </div>
+
+        <div class="calc-btn">
+          <input type="button" onclick="calculate()" value="Calculate" />
         </div>
+      </div>
+      <div class="form-result">
+        <div class="protein-daily result-title">
+          <h2>Proteins</h2>
+          <p id="pgdaily">120 g</p>
+          <p id="pkdaily">480 kcal</p>
+          <p id="ppdaily">17.6 %</p>
+        </div>
+        <div class="fat-daily result-title">
+          <h2>Fats</h2>
+          <p id="fgdaily">72 g</p>
+          <p id="fkdaily">648 kcal</p>
+          <p id="fpdaily">23.8 %</p>
+        </div>
+        <div class="Carbs-daily result-title">
+          <h2>Carbs</h2>
+          <p id="cgdaily">400 g</p>
+          <p id="ckdaily">1600 kcal</p>
+          <p id="cpdaily">58.7 %</p>
+        </div>
+      </div>
     </main>
-
-</body>
-<script src="app.js"></script>
+  </body>
+  <script src="app.js"></script>
 </html>
 
 <!-- credit icon
