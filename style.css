@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -19,8 +19,14 @@ input[type="number"] {
    ?#D53333
    #ff010c*/
 :root {
-  --main-bg-color: #fff;
-  --main-accent-color: #ff010c;
+  --main-bg-color: #ffffff;
+  --main-accent-color: #D7393E;
+}
+
+/* test */
+.neumorph {
+  box-shadow: inset 1px 1px 1px #fff, -9px -9px 9px #e6e6e6,
+    9px 9px 20px rgba(199, 199, 199, 0.8);
 }
 
 * {
@@ -44,13 +50,12 @@ a {
 }
 
 body {
-  background-color: #606061;
-  background-image: -webkit-linear-gradient(45deg, #606061 50%, #141414 50%);
-}
-
-.bg-gradient {
-  background-color: #606061;
-  background-image: -webkit-linear-gradient(45deg, #606061 50%, #141414 50%);
+  background-image: url(img/background_meter.jpg);
+  /* parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
@@ -62,17 +67,18 @@ header {
 header h1 {
   font-size: 3rem;
   padding: 1rem;
-  color: #ffffff;
+  color: var(--main-accent-color);
   text-transform: uppercase;
   letter-spacing: 0.5rem;
 }
 
 .first-section {
+  width: 70%;
+  color: rgb(53, 53, 53);
   background: var(--main-bg-color);
-  padding: 1rem;
+  padding: 2rem 1rem;
   margin: 0 auto;
-  border-top: 2px solid var(--main-accent-color);
-  border-bottom: 2px solid var(--main-accent-color);
+  border: 3px solid var(--main-accent-color);
 }
 
 /*centering and styling metric imperial radio*/
@@ -94,15 +100,17 @@ header h1 {
   background-color: var(--main-bg-color);
   font-size: 1.3rem;
   text-transform: uppercase;
+  font-weight: 600;
   border: 2px solid #000000;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .metric-imperial label:hover {
-  background-color: #dfd;
+  background-color: rgb(255, 231, 231);
 }
 
 .metric-imperial input[type="radio"]:focus + label {
@@ -110,7 +118,8 @@ header h1 {
 }
 
 .metric-imperial input[type="radio"]:checked + label {
-  background-color: var(--main-bg-color);
+  background-color: var(--main-accent-color);
+  color: #fff;
   border: 2px solid var(--main-accent-color);
 }
 
@@ -188,10 +197,11 @@ header h1 {
 /* Styling and adding functions to the modal window */
 .modal-dialog {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.8);
   z-index: 99999;
   opacity: 0;
@@ -210,23 +220,31 @@ header h1 {
 .modal-dialog h2 {
   text-align: center;
   margin: 2rem 0;
-  font-weight: 500;
-  font-size: 2rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-transform: uppercase;
 }
 
 .modal-dialog p {
   font-size: 1.2rem;
+  line-height: 35px;
 }
 
 .modal-dialog-macro {
   margin: 1.5rem auto;
-  font-weight: 500;
   font-size: 1.3rem;
 }
 
 .modal-dialog-macro ul {
+  margin: 3rem;
   display: flex;
   justify-content: space-evenly;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.modal-dialog-macro ul li {
+  border-bottom: 1px solid var(--main-accent-color);
 }
 
 .modal-dialog table {
@@ -234,19 +252,21 @@ header h1 {
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
+  border-spacing: 0px 30px;
 }
 
 .modal-dialog table th {
-  padding: 1.4rem 1rem;
+  padding: 1.4rem 1.5rem;
 }
 
 .modal-dialog > div {
   width: 60vw;
   position: relative;
-  margin: 10% auto;
-  padding: 5px 20px 13px 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px;
   border: 2px solid var(--main-accent-color);
-  border-radius: 10px;
   background: var(--main-bg-color);
 }
 
@@ -313,9 +333,13 @@ header h1 {
   border: none;
   border-radius: 20px;
   padding: 1rem;
-  font-size: 2rem;
   background: rgb(90, 190, 87);
   transition: all 0.2s ease-in-out;
+
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .calc-btn input:hover {
@@ -332,10 +356,11 @@ header h1 {
   width: 70%;
   border: 3px solid var(--main-accent-color);
   background: var(--main-bg-color);
-  margin: 2rem auto;
+  margin: 4rem auto;
   padding: 2rem;
   display: flex;
   justify-content: space-evenly;
+  color: rgb(53, 53, 53);
 }
 
 /*.form-result p {
@@ -355,6 +380,7 @@ header h1 {
   padding: 0.6rem;
   font-size: 2rem;
   border-bottom: 3px solid var(--main-accent-color);
+  text-transform: uppercase;
 }
 
 .result-title p {
