@@ -35,7 +35,7 @@ function toggleUnit() {
     }
 }
 
-// test function for imperial and metric
+// function for imperial and metric
 function calculate() {
     if (imperial.checked) {
         var bodyWeight = bodyWeight * 2.2;
