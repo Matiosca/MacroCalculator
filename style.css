@@ -72,6 +72,10 @@ header h1 {
 	letter-spacing: 0.5rem;
 }
 
+main {
+	position: relative;
+}
+
 .first-section {
 	width: 70%;
 	color: rgb(53, 53, 53);
@@ -194,30 +198,32 @@ header h1 {
 	transform: scale(1.4);
 }
 
-/* Styling and adding functions to the modal window */
-.modal-dialog {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.8);
-	z-index: 99999;
-	opacity: 0;
-	-webkit-transition: opacity 400ms ease-in;
-	-moz-transition: opacity 400ms ease-in;
-	transition: opacity 400ms ease-in;
-	pointer-events: none;
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	padding-top: 80px;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
 }
 
-.modal-dialog:target {
-	opacity: 1;
-	pointer-events: auto;
+.modal-content {
+	position: relative;
+	background-color: var(--main-bg-color);
+	margin: auto;
+	padding: 20px;
+	border: 2px solid var(--main-accent-color);
+	width: 80%;
 	text-align: center;
 }
 
-.modal-dialog h2 {
+.modal-content h2 {
+	color: var(--main-accent-color);
 	text-align: center;
 	margin: 2rem 0;
 	font-weight: 600;
@@ -225,29 +231,29 @@ header h1 {
 	text-transform: uppercase;
 }
 
-.modal-dialog p {
+.modal-content p {
 	font-size: 1.2rem;
 	line-height: 35px;
 }
 
-.modal-dialog-macro {
+.modal-content-macro {
 	margin: 1.5rem auto;
 	font-size: 1.3rem;
 }
 
-.modal-dialog-macro ul {
-	margin: 3rem;
+.modal-content-macro ul {
+	margin: 3rem auto;
 	display: flex;
 	justify-content: space-evenly;
 	text-transform: uppercase;
 	font-size: 1.2rem;
 }
 
-.modal-dialog-macro ul li {
+.modal-content-macro ul li {
 	border-bottom: 1px solid var(--main-accent-color);
 }
 
-.modal-dialog table {
+.modal-content table {
 	margin: 2rem auto;
 	display: flex;
 	justify-content: center;
@@ -255,30 +261,21 @@ header h1 {
 	border-spacing: 0px 30px;
 }
 
-.modal-dialog table th {
+.modal-content table th {
+	color: var(--main-accent-color);
 	padding: 1.4rem 1.5rem;
-}
-
-.modal-dialog > div {
-	width: 60vw;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	padding: 25px;
-	border: 2px solid var(--main-accent-color);
-	background: var(--main-bg-color);
 }
 
 .close {
 	display: inline-block;
 	background: #ebebeb;
-	color: #000000;
+	color: #505050;
 	position: absolute;
 	top: 0px;
 	right: 0px;
 	transform: translate(50%, -50%);
-	padding: 10px 15px;
+	padding: 5px 15px;
+	font-size: 30px;
 	border: 2px solid var(--main-accent-color);
 	border-radius: 50%;
 	font-weight: bold;
@@ -423,6 +420,14 @@ header h1 {
 	.result-title {
 		width: 100%;
 	}
+
+	.modal-content h2 {
+		font-size: 23px;
+	}
+
+	.modal-content p {
+		font-size: 16px;
+	}
 }
 
 @media screen and (max-width: 650px) {
@@ -456,21 +461,17 @@ header h1 {
 		font-size: 20px;
 	}
 
-	.modal-dialog > div {
+	.modal-content > div {
 		width: 80vw;
 	}
 
-	.close {
-		top: 50%;
-	}
-
-	.modal-dialog ul {
+	.modal-content ul {
 		display: flex;
 		flex-direction: column;
 		margin: 0 auto;
 	}
 
-	.modal-dialog ul li {
+	.modal-content ul li {
 		width: fit-content;
 		margin: 1rem auto;
 	}

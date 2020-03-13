@@ -82,9 +82,9 @@
 						<div class="pro-g-kg">
 							<p>
 								Proteins
-								<a href="#openModal"
-									><i id="infoIcon" class="far fa-question-circle fa-s"></i
-								></a>
+								<span id="infoIcon">
+									<i class="far fa-question-circle fa-s"></i>
+								</span>
 							</p>
 							&nbsp;
 							<input
@@ -107,9 +107,9 @@
 						<div class="fat-g-kg">
 							<p>
 								Fats
-								<a href="#openModal"
-									><i id="infoIcon" class="far fa-question-circle fa-s"></i
-								></a>
+								<span id="infoIconTwo">
+									<i class="far fa-question-circle fa-s"></i>
+								</span>
 							</p>
 							&nbsp;
 							<input
@@ -130,49 +130,49 @@
 						</div>
 					</div>
 				</form>
-				<!-- CREATING MODAL BOX WITH INFO ABOUT PROTEINS AND FATS g/Kg g/Lb-->
-				<div id="openModal" class="modal-dialog">
-					<div>
-						<a href="#close" title="Close" class="close">X</a>
-						<h2>Grams to bodyweight ratio</h2>
-						<p>
-							Diets are determined by a specific ratio between three
-							Macronutrients
-						</p>
-						<div class="modal-dialog-macro">
-							<ul>
-								<li>Proteins</li>
-								<li>Fats</li>
-								<li>Carbohydrates</li>
-							</ul>
-						</div>
-						<p>
-							Ratio between macros varies with each person, activity level and
-							diet goal.<br />
-							There are anyway average* indications, for example:<br />
-						</p>
-						<table>
-							<tr>
-								<th>Proteins 15~20%</th>
-								<th>Fats 20~25%</th>
-							</tr>
-							<tr>
-								<td>1.5 g/Kg</td>
-								<td>0.9 g/Kg</td>
-							</tr>
-							<tr>
-								<td>0.68 g/Lb</td>
-								<td>0.4 g/Lb</td>
-							</tr>
-						</table>
-
-						*average adult: 30 years-old - 2728 Kcal - 1.78m/5'10" - 80kg/176Lb
-						<p></p>
-					</div>
-				</div>
-
 				<div class="calc-btn">
 					<input type="button" onclick="calculate()" value="Calculate" />
+				</div>
+			</div>
+			<!-- CREATING MODAL BOX WITH INFO ABOUT PROTEINS AND FATS g/Kg g/Lb-->
+			<div class="modal" id="myModal">
+				<div class="modal-content">
+					<span id="close" title="Close" class="close">&times;</span>
+					<h2>Grams to bodyweight ratio</h2>
+					<p>
+						Diets are determined by a specific ratio between three
+						Macronutrients
+					</p>
+					<div class="modal-content-macro">
+						<ul>
+							<li>Proteins</li>
+							<li>Fats</li>
+							<li>Carbohydrates</li>
+						</ul>
+					</div>
+					<p>
+						Ratio between macros varies with each person, activity level and
+						diet goal.<br />
+						There are anyway average* indications, for example:<br />
+					</p>
+					<table>
+						<tr>
+							<th>Proteins 15~20%</th>
+							<th>Fats 20~25%</th>
+						</tr>
+						<tr>
+							<td>1.5 g/Kg</td>
+							<td>0.9 g/Kg</td>
+						</tr>
+						<tr>
+							<td>0.68 g/Lb</td>
+							<td>0.4 g/Lb</td>
+						</tr>
+					</table>
+
+					<p>
+						*average adult: 30 years-old - 2728 Kcal - 1.78m/5'10" - 80kg/176Lb
+					</p>
 				</div>
 			</div>
 			<div class="form-result">
