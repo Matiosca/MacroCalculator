@@ -267,6 +267,7 @@ main {
 }
 
 .close {
+	cursor: pointer;
 	display: inline-block;
 	background: #ebebeb;
 	color: #505050;
@@ -459,10 +460,6 @@ main {
 
 	.result-title p {
 		font-size: 20px;
-	}
-
-	.modal-content > div {
-		width: 80vw;
 	}
 
 	.modal-content ul {
